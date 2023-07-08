@@ -29,13 +29,11 @@ export function actionFill(wayId, projection, maxAngle) {
         var nodes = utilArrayUniq(graph.childNodes(way));
 
         var p, q, node, loc
-        var inBetweenNodes = [];
 
         const cc = nodes.length
         for (p = 0; p < (locs.length-cc); p++) {
             node = osmNode({ loc: locs[p] });
             nodes.splice(p, 0, node);
-            inBetweenNodes.push(node.id);
         }
         for (q = 0; q < locs.length; q++) {
 
